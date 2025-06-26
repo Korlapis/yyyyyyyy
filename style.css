@@ -1,0 +1,262 @@
+html, body {
+  height: 100%; 
+  margin: 0; 
+}
+
+
+body {
+    font-family: 'Playfair Display'; 
+    color:#000000;
+}
+.header {
+  background-color: #883a3a;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 1.75rem; 
+   font-weight: 500;
+}
+
+
+@media (max-width: 600px) { 
+  .header__item {
+    font-size: 1.5rem;
+    padding: 20px 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+ 
+  .header {
+    font-size: 2rem;
+    padding: 30px 0;
+  }
+}
+
+.header__item1 {
+  transition: transform 0.3s ease;
+}
+
+.header__item1:hover {
+  transform: scale(1.1);
+}
+
+.header__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header__list .header__link--bb { 
+  font-size: 2.2em;
+  font-weight: 600;
+}
+.header__link {
+  color: #000000;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5em;
+   position: relative; 
+  overflow: hidden; 
+   display: inline-block; 
+  transition: transform 0.3s ease; 
+}
+
+.header__link:hover {
+  transform: scale(1.2); 
+}
+.header__link--bb::after {
+  content: '';
+  display: block; 
+  width: 100%; 
+  height: 10px; 
+  background-color: black; 
+  position: absolute; 
+  bottom: -2px; 
+  left: 0; 
+}
+
+
+.header__icon {
+  width: 40px;
+  height: auto;
+  vertical-align: middle;
+   transition: transform 0.3s ease; 
+}
+.header__icon:hover {
+  transform: scale(1.2); 
+}
+.header__separator {
+  color: #000000;
+  margin: 0 5px;
+}
+
+.header__item--icons {
+  display: flex;
+  align-items: center;
+}
+
+
+.image-section {
+  position: relative;
+  width: 100%; 
+}
+.image-section img {
+  width: 100%;       
+  height: auto;     
+  display: block;   
+  object-fit: contain;  
+}
+
+.header-image {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%;  
+    height: 100%; 
+    text-align: center;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+
+}
+.image-overlay h1 {
+    font-size: clamp(5rem, 10vw, 10rem); 
+}
+
+.image-overlay a { 
+  font-size: clamp(1rem, 5vw, 2rem);  
+
+}
+
+.image-title {
+  font-size: 10em;
+  margin-bottom: 20px;
+   font-weight: lighter; 
+
+}
+
+  .image-button {
+    background-color: #000000;
+    color: white;
+      padding: clamp(15px, 5vw, 45px) clamp(65px, 15vw, 195px); 
+    text-decoration: none;
+    font-size: clamp(1.5em, 2.2vw, 3.5em); 
+    display: inline-block;
+  }
+
+.footer {
+  background-color: #883a3a;
+  color: #000000;
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; 
+  font-family: 'Playfair Display';
+  text-align: left; 
+}
+
+.footer__info {
+ 
+  padding-left: 20px;
+}
+
+.footer__info p {
+  margin: 5px 0;
+  font-size: 1.8em;
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  
+  padding-right: 60px;
+}
+
+.footer__social a {
+  margin-left: 60px; 
+}
+
+.footer__social img {
+  width: 35px;
+  height: auto;
+}
+
+
+ .footer-info a {
+            color: #000000;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .footer-info a:hover {
+            text-decoration: underline;
+        }
+        
+
+.modal {
+  display: block; /* Модальное окно всегда видно */
+  position: fixed; /* Фиксированное позиционирование */
+  z-index: 1000; /* Убедитесь, что оно выше всего остального контента */
+  left: 0;
+  top: 0;
+  width: 100%; /* На всю ширину экрана */
+  height: 100%; /* На всю высоту экрана */
+  overflow: auto; /* Прокрутка, если контент не помещается */
+  background-color: rgba(0, 0, 0, 0.8); /* Темный полупрозрачный фон для лучшей видимости */
+}
+
+.modal-content {
+  background-color: #fff; /* Белый фон для содержимого */
+  margin: 20% auto; /* Центрируем по вертикали и горизонтали */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Ширина контента */
+  max-width: 500px; /* Максимальная ширина */
+  text-align: center;
+  border-radius: 5px; /* Скругленные углы */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Тень */
+}
+
+#age-verification-yes,
+#age-verification-no {
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#age-verification-yes {
+  background-color: #727472; /* Зеленый цвет для кнопки "Да" */
+  color: white;
+}
+
+#age-verification-no {
+  background-color: #f44336; /* Красный цвет для кнопки "Нет" */
+  color: white;
+}
+
+#age-verification-yes:hover {
+  background-color: #367C39; /* Более темный зеленый при наведении */
+}
+
+#age-verification-no:hover {
+  background-color: #B71C1C; /* Более темный красный при наведении */
+}

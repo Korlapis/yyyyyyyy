@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bushido Blades</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+    <nav class="header__nav">
+      <ul class="header__list">
+        <li class="header__item"><a href="question.html" class="header__link">Помощь</a></li>
+        <li class="header__item"><a href="us.html" class="header__link">О нас</a></li>
+       <li class="header__item1"><a href="index.html" class="header__link header__link--underline header__link--bb">BB</a></li>
+        <li class="header__item"><a href="catalog.html" class="header__link">Каталог</a></li>
+        <li class="header__item header__item--icons"> 
+          <a href="bag.html" class="header__link"><img src="bg/bag.png" alt="Корзина" class="header__icon"></a>
+          <span class="header__separator">|</span> 
+          <a href="profile.html" class="header__link1"><img src="bg/user.png" alt="Личный кабинет" class="header__icon"></a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(103013817, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/103013817" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+  </header>
+
+  <div class="image-section">
+    <img src="bg/samurai.jpg" alt="Bushido Blades" class="header-image">
+    <div class="image-overlay">
+      <h1 class="image-title">Bushido Blades</h1>
+      <a href="catalog.html" class="image-button">каталог</a>
+    </div>
+     
+<div id="age-verification-modal" class="modal">
+  <div class="modal-content">
+    <h2>Внимание! Возрастное ограничение</h2>
+    <p>Этот сайт может содержать материалы, не предназначенные для лиц младше 18 лет. Подтвердите, что вам исполнилось 18 лет.</p>
+    <button id="age-verification-yes">Мне есть 18 лет</button>
+    <button id="age-verification-no">Мне нет 18 лет</button>
+  </div>
+</div>
+<script>
+ document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('age-verification-modal');
+  const yesButton = document.getElementById('age-verification-yes');
+  const noButton = document.getElementById('age-verification-no');
+
+
+  yesButton.addEventListener('click', function() {
+    // Сохраняем информацию в localStorage (если нужно временно скрыть на сессию)
+    sessionStorage.setItem('ageVerified', 'true');
+    modal.style.display = "none"; // Скрываем модальное окно
+  });
+
+  noButton.addEventListener('click', function() {
+    // Перенаправляем на другой сайт или закрываем окно
+    window.location.href = "https://www.google.com"; // Пример: перенаправление на Google
+    // Или: window.close(); // Закрыть окно
+  });
+
+   //Проверка сессии
+   if (sessionStorage.getItem('ageVerified')) {
+        modal.style.display = "none";
+    } else {
+        modal.style.display = "block";
+    }
+});
+</script>
+  </div><footer class="footer">
+  <div class="footer__info">
+    <p>адрес: ул. Сталеваров 2</p>
+    <p>почта: bbench@gmail.com</p>
+    <p>телефон: +7-977-911-73-44</p>
+    <div class="footer-info">
+            &copy; 2025 Ваш Сайт. Все права защищены. |
+            <a href="https://www.kitana.ru/legal/policy/">Политика конфиденциальности</a> |
+        </div>
+  </div>
+  <div class="footer__social">
+    <a href="https://m.vk.com/id600299036"><img src="bg/vk.png" alt="VK"></a>
+    <a href="https://t.me/+79779117344"><img src="bg/telegram.png" alt="Telegram"></a>
+    <a href="https://www.instagram.com"><img src="bg/instagram.png" alt="Instagram"></a>
+  </div>
+</footer>
+</body>

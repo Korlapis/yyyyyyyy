@@ -1,0 +1,508 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bushido Blades</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
+    <style>
+  .footer-info a {
+            color: #000000;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .footer-info a:hover {
+            text-decoration: underline;
+        }
+  
+  .body {
+color:#eae8e7;
+  }
+  
+     .sakura-container {
+            justify-content: end;
+            width: 100%;
+            position: relative;
+          
+            height: 400px; 
+            overflow: visible; 
+        }
+
+        .sakura-container img {
+            float: right;
+            max-width: 1000px;
+            width: clamp(100px, 70vw, 2500px);
+            filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+            transition: transform 0.3s;
+            transform: scaleX(-1);
+        }
+
+        .sakura-container:hover img {
+            transform: scaleX(-1) scale(1.1);
+        }
+
+       
+        .sakura-petal {
+    position: absolute;
+    width: 18px; 
+    height: 28px; 
+ 
+    background: linear-gradient(to bottom, rgba(255, 230, 230, 0.7) 0%, rgba(235, 12, 12, 0.678) 70%, rgba(220, 20, 60, 0) 100%);
+    border-radius: 40% 50% 50% 40%; 
+    pointer-events: none;
+
+    filter: blur(1.5px); 
+    opacity: 0.9; 
+}
+
+
+.sakura-petal::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, transparent 70%); 
+    border-radius: inherit;
+    opacity: 0.3;
+    pointer-events: none;
+}
+.catalog__title {
+    font-size: 80px; 
+  text-align: center;
+    color: black;
+   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+.catalog__item {
+  display: flex;          
+  align-items: center;    
+  justify-content: space-between; 
+  padding: 7vw;         
+  margin-bottom: 10px;     
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+.catalog__image1 {
+  
+  width: clamp(50px, 40vw, 800px);  
+  margin-left: 6vw;
+  object-fit: contain;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s;
+  
+}
+
+.catalog__image2 {
+  
+  margin-right: 4vw;
+  object-fit: contain; 
+ width: clamp(50px, 40vw, 650px);
+ filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+ transition: transform 0.3s;
+}
+
+.catalog__image3 {
+  
+  margin-left: 10vw;
+  width: clamp(50px, 30vw, 450px);
+  object-fit: contain; 
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s;
+}
+
+.catalog__image4 {
+  
+  margin-right: 6vw;
+  object-fit: contain; 
+width: clamp(50px, 40vw, 800px); 
+   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+   transition: transform 0.3s;
+}
+
+.catalog__image1:hover{
+  transform: scale(1.2);
+}
+.catalog__image2:hover{
+  transform: scale(1.2);
+}
+.catalog__image3:hover{
+  transform: scale(1.2);
+}
+.catalog__image4:hover{
+  transform: scale(1.2);
+}
+
+.catalog__text1 {
+  margin-right: 12vw;
+  text-align: right;
+  flex-grow: 1;
+  padding-left: 10px;
+  font-size: clamp(1.5rem, 10vw, 4rem); 
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+.catalog__text2 {
+  padding-right: 10px;
+    text-align: left;  
+  flex-grow: 1; 
+  margin-left: 12vw;
+ font-size: clamp(1.5rem, 10vw, 4rem);
+ filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+.catalog__text3 {
+  margin-right: 12vw;
+  text-align: right;   
+  flex-grow: 1;        
+  padding-left: 10px; 
+  font-size: clamp(1.5rem, 10vw, 4rem);
+ filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+.catalog__text4 {
+  padding-right: 10px;
+    text-align: left;   
+  flex-grow: 1; 
+  margin-left: 12vw;
+  font-size: clamp(1.5rem, 10vw, 4rem);
+ filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+
+@media (max-width: 600px) { 
+  .header__item {
+    font-size: 1.5rem; 
+    padding: 20px 0; 
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+ 
+  .header {
+    font-size: 2rem;
+    padding: 30px 0;
+  }
+}
+
+@media (max-width: 768px) { 
+  .catalog__item {
+    width: calc(100% - 20px); 
+  }
+}
+
+@media (max-width: 480px) { 
+  .catalog__title {
+    font-size: 1.5rem;  
+  }
+
+  .catalog__text1,
+  .catalog__text2,
+  .catalog__text3,
+  .catalog__text4 {
+    font-size: 1rem;    
+  }
+
+  .catalog {
+    padding: 10px;    
+  }
+}
+@media (max-width: 768px) {
+  .catalog__image1 {
+    width: clamp(50px, 30vw, 300px);
+  }
+
+  .catalog__text1 {
+    font-size: clamp(1.2rem, 8vw, 3rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog__image1 {
+    margin-left: 3vw;
+  }
+  .catalog__text1 {
+    margin-right: 5vw;
+  }
+}
+
+.catalog__link {
+  text-decoration: none;  
+  color: inherit;       
+ 
+}
+
+.catalog__link:hover {
+  text-decoration: underline; 
+}
+#btn-up {
+  display: none; 
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px; 
+  height: 60px; 
+  border: none; 
+  border-radius: 50%; 
+  background-color: rgba(150, 0, 0, 0.8); 
+  color: white; 
+  font-size: 28px; 
+  cursor: pointer; 
+  z-index: 1000;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+#btn-up:hover {
+  opacity: 1; 
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; 
+  margin-left: 390px; 
+  margin-top: -100px; 
+}
+
+.search-input {
+  padding: 15px; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 700px;
+  margin-right: 10px;
+  font-size: 16px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.search-button {
+  padding: 15px 20px; 
+  border: none;
+  border-radius: 5px;
+  background-color: #a34545; 
+  color: white;
+  cursor: pointer;
+  font-size: 16px; 
+}
+
+.search-button:hover {
+  background-color: rgb(165, 165, 165); 
+}
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+<header class="header">
+    <nav class="header__nav">
+      <ul class="header__list">
+        <li class="header__item"><a href="question.html" class="header__link">Помощь</a></li>
+        <li class="header__item"><a href="us.html" class="header__link">О нас</a></li>
+       <li class="header__item"><a href="index.html" class="header__link header__link--underline header__link--bb">BB</a></li>
+        <li class="header__item"><a href="catalog.html" class="header__link">Каталог</a></li>
+        <li class="header__item header__item--icons"> 
+          <a href="bag.html" class="header__link"><img src="bg/bag.png" alt="Корзина" class="header__icon"></a>
+          <span class="header__separator">|</span> 
+          <a href="profile.html" class="header__link"><img src="bg/user.png" alt="Личный кабинет" class="header__icon"></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="catalog">
+  <h1 class="catalog__title">каталог</h1>
+
+
+
+ 
+  <div class="sakura-container">
+   <img src="bg/sakura.png" alt="Sakura">
+  </div>
+ <div class="search-container">
+  <input type="text" class="search-input" placeholder="Поиск..." />
+  <button class="search-button">🔍</button>
+</div>
+
+
+  <div class="big">
+
+  <div class="catalog__item" data-name="катаны">
+    <a href="katanaall.html" class="catalog__link"> <img src="bg/katana1.png" alt="Катаны" class="catalog__image1"></a>
+   <a href="katanaall.html" class="catalog__link">  <div class="catalog__text1">катаны</div></a>
+  </div>
+
+  <div class="catalog__item" data-name="веера">
+    <a href="fanall.html" class="catalog__link"> <div class="catalog__text2">веера</div></a>
+       <a href="fanall.html" class="catalog__link"><img src="bg/fan1.png" alt="Веера" class="catalog__image2"></a>
+  </div>
+
+  <div class="catalog__item" data-name="Сюрикены">
+     <a href="shurikenall.html" class="catalog__link"><img src="bg/shuriken1.png" alt="Сюрикэны" class="catalog__image3"></a>
+    <a href="shurikenall.html" class="catalog__link"> <div class="catalog__text3">сюрикэны</div></a>
+  </div>
+
+  <div class="catalog__item" data-name="кунаи">
+   <a href="kunaiall.html" class="catalog__link"><div class="catalog__text4">кунаи</div></a> 
+    <a href="kunaiall.html" class="catalog__link"><img src="bg/kunai.png" alt="Кунаи" class="catalog__image4"></a>
+  </div>
+
+
+<button id="btn-up" title="Наверх" style="display:none;">
+  &#8593; 
+</button>
+
+
+
+<script>
+ const btnUp = document.getElementById('btn-up');
+
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 100) {
+    btnUp.style.display = 'flex';
+  } else {
+    btnUp.style.display = 'none';
+  }
+});
+
+
+btnUp.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+
+
+
+
+
+
+
+
+const searchInput = document.querySelector('.search-input');
+const catalogItems = document.querySelectorAll('.catalog__item');
+
+searchInput.addEventListener('input', function() {
+  const searchTerm = this.value.toLowerCase();
+
+  catalogItems.forEach(item => {
+    const itemName = item.getAttribute('data-name').toLowerCase(); 
+    if (itemName.includes(searchTerm)) {
+      item.style.display = ''; 
+    } else {
+      item.style.display = 'none';
+    }
+  });
+});
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.sakura-container');
+    const maxPetals = 50;
+    let currentPetalCount = 0;
+
+    function createPetal() {
+        if (currentPetalCount < maxPetals) {
+            const petal = document.createElement('div');
+            petal.classList.add('sakura-petal');
+
+            
+            petal.style.left = Math.random() * container.offsetWidth + 'px';
+            petal.style.top = '-20px';
+
+            container.appendChild(petal);
+            currentPetalCount++;
+
+            animatePetal(petal);
+        }
+    }
+
+    function animatePetal(petal) {
+        let positionY = -20;
+        const speed = Math.random() * 1.0 + 0.5;
+        const startPositionX = parseFloat(petal.style.left);
+        const drift = (Math.random() - 0.5) * 20;
+        const rotationSpeed = (Math.random() - 0.5) * 0.4;
+
+        function frame() {
+            positionY += speed;
+            const positionX = startPositionX + Math.sin(positionY / 80) * drift;
+            const rotation = positionY * rotationSpeed;
+
+            petal.style.top = positionY + 'px';
+            petal.style.left = positionX + 'px';
+            petal.style.transform = `rotate(${rotation}deg)`;
+
+           
+            const footer = document.querySelector('footer'); 
+            const footerTop = footer ? footer.offsetTop : document.documentElement.scrollHeight;
+
+            
+            if (positionY > footerTop) {
+                petal.remove();
+                currentPetalCount--;
+                return;
+            }
+
+            requestAnimationFrame(frame);
+        }
+
+        requestAnimationFrame(frame);
+    }
+
+    container.addEventListener('mouseenter', function() {
+        const intervalId = setInterval(createPetal, 100);
+        container.dataset.intervalId = intervalId;
+    });
+
+    container.addEventListener('mouseleave', function() {
+        clearInterval(container.dataset.intervalId);
+    });
+});
+</script>
+
+</div>
+</main>
+  </div>
+  
+   <footer class="footer">
+  <div class="footer__info">
+    <p>адрес: ул. Сталеваров 2</p>
+    <p>почта: bbench@gmail.com</p>
+    <p>телефон: +7-977-911-73-44</p>
+    <div class="footer-info">
+            &copy; 2025 Ваш Сайт. Все права защищены. |
+            <a href="https://www.kitana.ru/legal/policy/">Политика конфиденциальности</a> |
+        </div>
+  </div>
+  <div class="footer__social">
+    <a href="https://m.vk.com/id600299036"><img src="bg/vk.png" alt="VK"></a>
+    <a href="https://t.me/+79779117344"><img src="bg/telegram.png" alt="Telegram"></a>
+    <a href="https://www.instagram.com"><img src="bg/instagram.png" alt="Instagram"></a>
+  </div>
+
+     
+</footer>
+</body>
+
+
+</html>
